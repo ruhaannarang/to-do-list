@@ -41,6 +41,7 @@
 
 
     <script>
+        // import { todo } from "./models/todo.js"
         const addbtn = document.body.querySelector(".addImg")
         addbtn.addEventListener("click",() => {
           document.body.querySelector(".addingMenu").style.display="flex"
@@ -50,10 +51,14 @@
         )
 
         document.querySelectorAll(".checkboxImg").forEach((btn) => {
+            
         btn.addEventListener("click", () => {
             const taskElement = btn.parentElement; 
             taskElement.classList.add("isDone")
-            task
+            
+            // todo.todos.updateOne({task:taskElement.textContent},
+            //     {$set: {isDone:true}}
+            // )
             
         });
     });
