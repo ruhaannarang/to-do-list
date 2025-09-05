@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="nav">
+       <div class="siteName">
+           <%= siteName %>
+       </div> 
+       <div class="addImg">
+        <img src="https://img.icons8.com/?size=100&id=SuPFstyooiwU&format=png&color=f5f5dc" alt="" width="40px">
+       </div>
+    </header>
+
+    <div class="addingMenu addTask">
+        <div class="addDetails">
+            <p style="font-size: 3rem;">
+                Enter your task
+            </p>
+            <form  action="/submit" method="POST">
+                <input class="taskToBeEntered" name="task" type="text" placeholder="Enter your task">
+                <input class="taskToBeEntered" type="submit">
+
+            </form>
+        </div>
+    </div>
+    <div class="content">
+        <% tasks.forEach(item => { %>
+            
+                <div class="task"><%= item.task %> 
+                <img class="checkboxImg" src="https://img.icons8.com/?size=25&id=40902&format=png&color=a52a2a"  alt=""></div>
+            
+            
+        <% }); %>
+    </div>
+
+
+    <script>
+        const addbtn = document.body.querySelector(".addImg")
+        addbtn.addEventListener("click",() => {
+          document.body.querySelector(".addingMenu").style.display="flex"
+        //   document.body.querySelector(".addTask").style.filter="blur(5px)";
+        //   document.body.querySelector(".addDetails").style.filter="blur(0)";
+        }
+        )
+
+        document.querySelectorAll(".checkboxImg").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const taskElement = btn.parentElement; 
+            taskElement.classList.add("isDone")
+            // taskElement.style.color = "rgba(139, 50, 50, 0.568)";
+            // taskElement.style.textDecoration = "line-through";
+        });
+    });
+
+        // const checkbtn = document.body.querySelectorAll(".checkboxImg")
+        // checkbtn.addEventListener("click",()=>{
+
+        //     document.body.querySelectorAll(".task").forEach( (Element) => {
+        //       Element.parentElement.querySelector(".task").style="rgba(139, 34, 34, 0.568)"
+        //     }
+        //     )
+        //     // document.body.pa.querySelector(".task").style.color="rgba(139, 34, 34, 0.568)"
+        //     // document.body.querySelector(".task").style.textdecoration="line-through" 
+        // })
+    </script>
+</body>
+</html>
