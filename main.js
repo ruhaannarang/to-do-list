@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import express from "express";
-await mongoose.connect("mongodb+srv://ruhaannarang3_db_user:BKptLahAPmhbOL1p@cluster0.sjmugle.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+await mongoose.connect("mongodb://localhost:27017/todo")
 import { todo } from "./models/todo.js"
 
 // const express = require('express')
