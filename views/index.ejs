@@ -41,6 +41,8 @@
 
 
     <script>
+         const tasks = <%- JSON.stringify(tasks) %>;
+          console.log(tasks);
         // import { todo } from "./models/todo.js"
         const addbtn = document.body.querySelector(".addImg")
         addbtn.addEventListener("click",() => {
